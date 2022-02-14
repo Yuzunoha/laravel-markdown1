@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Markdown;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +25,36 @@ Route::get('markdown', function () {
 Route::get('hoge', 'HogeController@index');
 Route::get('fuga', 'FugaController@index');
 Route::get('hoge2', 'Hoge2Controller@index');
+Route::get('test', function () {
+    return Markdown::get();
+});
+Route::get('create', function () {
+    $m = new Markdown();
+    $text = <<< EOM
+    # 見出し h1
+    ## 見出し h2
+    ### 見出し h3
+    #### 見出し h4
+    ##### 見出し h5
+    ###### 見出し h6
+    **太字**
+    - リスト
+    - リスト
+        - リスト
+    - [ ] チェックボックス
+    - [x] チェックボックス
+    - [ ]
+
+    | Left align       |       Right align |    Center align    |
+    |:-----------------|------------------:|:------------------:|
+    | This             |              This |        This        |
+    | column           |            column |       column       |
+    | will             |              will |        will        |
+    | be               |                be |         be         |
+    | left             |             right |       center       |
+    | aligned          |           aligned |      aligned       |
+    EOM;
+    $m->markdowntext = $text;
+    $m->save();
+    return Markdown::get();
+});
