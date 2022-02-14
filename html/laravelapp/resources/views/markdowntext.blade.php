@@ -6,7 +6,8 @@
 
 <body>
   <div>
-    {{ $text }}
+    {{ Form::textarea('textareaRemarks', $rawtext, ['class' => 'form-control', 'id' => 'textareaRemarks', 'placeholder' => 'その他、質問などありましたら', 'rows' => '3']) }}
+    {{ $markdowntext }}
   </div>
 </body>
 

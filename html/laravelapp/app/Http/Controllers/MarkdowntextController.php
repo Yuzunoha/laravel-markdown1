@@ -8,31 +8,31 @@ use Illuminate\Mail\Markdown;
 
 class MarkdowntextController extends Controller
 {
-    public function index()
-    {
-        $m = Markdowntext::find(1);
-        if ($m) {
-            $text = $m->text;
-        } else {
-            $text = $this->example();
-        }
-        $text = Markdown::parse($text);
-        return view('markdowntext', compact('text'));
+  public function index()
+  {
+    $m = Markdowntext::find(1);
+    if ($m) {
+      $rawtext = $m->text;
+    } else {
+      $rawtext = $this->example();
     }
+    $markdowntext = Markdown::parse($rawtext);
+    return view('markdowntext', compact('markdowntext', 'rawtext'));
+  }
 
-    public function store(Request $request)
-    {
-        $m = Markdowntext::find(1);
-        if (!$m) {
-            $m = new Markdowntext();
-        }
-        $m->text = $request->text;
-        return $m->save();
+  public function store(Request $request)
+  {
+    $m = Markdowntext::find(1);
+    if (!$m) {
+      $m = new Markdowntext();
     }
+    $m->text = $request->text;
+    return $m->save();
+  }
 
-    public function example()
-    {
-        $t = <<< EOM
+  public function example()
+  {
+    $t = <<< EOM
 Markdownを使う理由
 =================================
 
@@ -146,6 +146,6 @@ __ボールド__
 以上
 EOM;
 
-        return $t;
-    }
+    return $t;
+  }
 }
