@@ -26,8 +26,21 @@ Route::get('hoge', 'HogeController@index');
 Route::get('fuga', 'FugaController@index');
 Route::get('hoge2', 'Hoge2Controller@index');
 Route::get('test', 'TestController@index');
+Route::get('demo2', function () {
+    $converter = new \cebe\markdown\MarkdownExtra();
+    $text = getMarkdowntext();
+    $text = $converter->parse($text);
+    return view('demo2', compact('text'));
+});
 Route::get('create', function () {
     $m = new Markdown();
+    $text = getMarkdowntext();
+    $m->markdowntext = $text;
+    $m->save();
+    return Markdown::get();
+});
+function getMarkdowntext()
+{
     $text = <<< EOM
     # 見出し h1
     ## 見出し h2
@@ -52,7 +65,5 @@ Route::get('create', function () {
     | left             |             right |       center       |
     | aligned          |           aligned |      aligned       |
     EOM;
-    $m->markdowntext = $text;
-    $m->save();
-    return Markdown::get();
-});
+    return $text;
+}
