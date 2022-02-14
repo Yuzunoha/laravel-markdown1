@@ -6,7 +6,10 @@
 
 <body>
   <div>
-    {{ Form::textarea('textareaRemarks', $rawtext, ['class' => 'form-control', 'id' => 'textareaRemarks', 'placeholder' => 'その他、質問などありましたら', 'rows' => '3']) }}
+    {{ Form::open(['action' => 'MarkdowntextController@store', 'method' => 'post']) }}
+    {{ Form::textarea('textarea1', $rawtext, ['class' => 'form-control',  'rows' => '80', 'cols' => '120']) }}
+    {{ Form::submit('上書き', ['class' => 'btn btn-success btn-lg']) }}
+    {{ Form::close() }}
     {{ $markdowntext }}
   </div>
 </body>

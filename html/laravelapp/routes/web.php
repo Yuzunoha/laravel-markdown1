@@ -40,6 +40,7 @@ Route::get('create', function () {
     return Markdown::get();
 });
 Route::get('markdowndemo', 'MarkdowntextController@index');
+Route::post('markdowndemo', 'MarkdowntextController@store');
 function getMarkdowntext()
 {
     $text = <<< EOM
