@@ -25,9 +25,7 @@ Route::get('markdown', function () {
 Route::get('hoge', 'HogeController@index');
 Route::get('fuga', 'FugaController@index');
 Route::get('hoge2', 'Hoge2Controller@index');
-Route::get('test', function () {
-    return Markdown::get();
-});
+Route::get('test', 'TestController@index');
 Route::get('create', function () {
     $m = new Markdown();
     $text = <<< EOM
