@@ -17,7 +17,7 @@ EEE;
 
 <body>
   <div>
-    {{ $markdown }}
+    @markdown('markdowns.test')
   </div>
 </body>
 

@@ -14,7 +14,16 @@ composer install xxxxx/xxxxx
 
 1. ここは注意
 2. ここも注意
-3. ここは絶対に注意！
+3. ここは絶対に注意
+
+- aaa
+- aaa
+- aaa
+- [ ] aaa
+- [ ] aaa
+- [ ] aaa
+- aaa
+- aaa
 
 初めて使う場合は、`php artisan *****` を使ってください。
 

@@ -3,15 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Mail\Markdown;
-use Illuminate\Support\HtmlString;
-use League\CommonMark\CommonMarkConverter;
-use League\CommonMark\Environment;
-use League\CommonMark\Environment\Environment as EnvironmentEnvironment;
-use League\CommonMark\Extension\Table\TableExtension;
-// 追加
-use League\CommonMark\Extension\DisallowedRawHTML\DisallowedRawHTMLExtension;
 
-class FugaController extends Controller
+class Hoge2Controller extends Controller
 {
   public function index()
   {
@@ -40,22 +33,6 @@ class FugaController extends Controller
     | aligned          |           aligned |      aligned       |
     EOM;
 
-    // $markdown = Markdown::parse(e($text));
-
-
-
-    // $environment = Environment::createCommonMarkEnvironment();
-    $environment = EnvironmentEnvironment::createCommonMarkEnvironment();
-
-    $environment->addExtension(new TableExtension);
-    // 追加
-    // $environment->addExtension(new DisallowedRawHTMLExtension());
-
-    $converter = new CommonMarkConverter([
-      'allow_unsafe_links' => false,
-    ], $environment);
-
-    $markdown = new HtmlString($converter->convertToHtml($text));
-    return view('demo', compact('markdown'));
+    return view('demo', compact('text'));
   }
 }

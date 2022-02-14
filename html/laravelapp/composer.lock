@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fd3385d641f5d79c53f4ba6ac671bbdd",
+    "content-hash": "c80c299ada32b3f8ebc9e7ce77711703",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -121,6 +121,58 @@
                 }
             ],
             "time": "2021-08-15T20:50:18+00:00"
+        },
+        {
+            "name": "calebporzio/gitdown",
+            "version": "v1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/calebporzio/gitdown.git",
+                "reference": "c4372d79bfbecb92e61e25fb34dc00358eee910e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/calebporzio/gitdown/zipball/c4372d79bfbecb92e61e25fb34dc00358eee910e",
+                "reference": "c4372d79bfbecb92e61e25fb34dc00358eee910e",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "CalebPorzio\\GitDownServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CalebPorzio\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Caleb Porzio",
+                    "email": "calebporzio@gmail.com"
+                }
+            ],
+            "description": "A simple package to parse Github Flavored Markdown in PHP",
+            "homepage": "https://github.com/calebporzio/gitdown",
+            "keywords": [
+                "calebporzio",
+                "gitdown"
+            ],
+            "support": {
+                "issues": "https://github.com/calebporzio/gitdown/issues",
+                "source": "https://github.com/calebporzio/gitdown/tree/master"
+            },
+            "time": "2019-03-06T03:36:39+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
