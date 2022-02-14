@@ -27,7 +27,8 @@ class MarkdowntextController extends Controller
       $m = new Markdowntext();
     }
     $m->text = $request->text;
-    return $m->save();
+    // $m->save();
+    return redirect()->action('MarkdowntextController@index');
   }
 
   public function example()
