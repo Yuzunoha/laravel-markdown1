@@ -20,3 +20,5 @@ Route::get('/', function () {
 Route::get('markdown', function () {
     return view('markdown');
 });
+
+Route::get('demo', 'HogeController@index');
