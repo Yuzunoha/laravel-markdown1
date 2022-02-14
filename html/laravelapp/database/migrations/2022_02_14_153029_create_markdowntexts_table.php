@@ -15,6 +15,7 @@ class CreateMarkdowntextsTable extends Migration
     {
         Schema::create('markdowntexts', function (Blueprint $table) {
             $table->id();
+            $table->text('markdowntexts');
             $table->timestamps();
         });
     }
