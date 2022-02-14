@@ -35,5 +35,8 @@ class AppServiceProvider extends ServiceProvider
             $Parsedown = new \Parsedown();
             return $Parsedown->text($markdown);
         });
+
+        // ssl化(https強制)
+        $url->forceScheme('https');
     }
 }
