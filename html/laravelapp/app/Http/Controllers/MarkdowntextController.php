@@ -26,8 +26,8 @@ class MarkdowntextController extends Controller
     if (!$m) {
       $m = new Markdowntext();
     }
-    $m->text = $request->text;
-    // $m->save();
+    $m->text = $request->textarea1;
+    $m->save();
     return redirect()->action('MarkdowntextController@index');
   }
 
