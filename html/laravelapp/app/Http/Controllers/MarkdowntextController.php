@@ -33,110 +33,121 @@ class MarkdowntextController extends Controller
     public function example()
     {
         $t = <<< EOM
-        # Welcome to StackEdit!
+Markdownを使う理由
+=================================
 
-        Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the **file explorer** on the left corner of the navigation bar.
-        
-        
-        # Files
-        
-        StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible **offline!**
-        
-        ## Create files and folders
-        
-        The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the **New file** button in the file explorer. You can also create folders by clicking the **New folder** button.
-        
-        ## Switch to another file
-        
-        All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
-        
-        ## Rename a file
-        
-        You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
-        
-        ## Delete a file
-        
-        You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
-        
-        ## Export a file
-        
-        You can export the current file by clicking **Export to disk** in the menu. You can choose to export the file as plain Markdown, as HTML using a Handlebars template or as a PDF.
-        
-        
-        # Synchronization
-        
-        Synchronization is one of the biggest features of StackEdit. It enables you to synchronize any file in your workspace with other files stored in your **Google Drive**, your **Dropbox** and your **GitHub** accounts. This allows you to keep writing on other devices, collaborate with people you share the file with, integrate easily into your workflow... The synchronization mechanism takes place every minute in the background, downloading, merging, and uploading file modifications.
-        
-        There are two types of synchronization and they can complement each other:
-        
-        - The workspace synchronization will sync all your files, folders and settings automatically. This will allow you to fetch your workspace on any other device.
-            > To start syncing your workspace, just sign in with Google in the menu.
-        
-        - The file synchronization will keep one file of the workspace synced with one or multiple files in **Google Drive**, **Dropbox** or **GitHub**.
-            > Before starting to sync files, you must link an account in the **Synchronize** sub-menu.
-        
-        ## Open a file
-        
-        You can open a file from **Google Drive**, **Dropbox** or **GitHub** by opening the **Synchronize** sub-menu and clicking **Open from**. Once opened in the workspace, any modification in the file will be automatically synced.
-        
-        ## Save a file
-        
-        You can save any file of the workspace to **Google Drive**, **Dropbox** or **GitHub** by opening the **Synchronize** sub-menu and clicking **Save on**. Even if a file in the workspace is already synced, you can save it to another location. StackEdit can sync one file with multiple locations and accounts.
-        
-        ## Synchronize a file
-        
-        Once your file is linked to a synchronized location, StackEdit will periodically synchronize it by downloading/uploading any modification. A merge will be performed if necessary and conflicts will be resolved.
-        
-        If you just have modified your file and you want to force syncing, click the **Synchronize now** button in the navigation bar.
-        
-        > **Note:** The **Synchronize now** button is disabled if you have no file to synchronize.
-        
-        ## Manage file synchronization
-        
-        Since one file can be synced with multiple locations, you can list and manage synchronized locations by clicking **File synchronization** in the **Synchronize** sub-menu. This allows you to list and remove synchronized locations that are linked to your file.
-        
-        
-        # Publication
-        
-        Publishing in StackEdit makes it simple for you to publish online your files. Once you're happy with a file, you can publish it to different hosting platforms like **Blogger**, **Dropbox**, **Gist**, **GitHub**, **Google Drive**, **WordPress** and **Zendesk**. With [Handlebars templates](http://handlebarsjs.com/), you have full control over what you export.
-        
-        > Before starting to publish, you must link an account in the **Publish** sub-menu.
-        
-        ## Publish a File
-        
-        You can publish your file by opening the **Publish** sub-menu and by clicking **Publish to**. For some locations, you can choose between the following formats:
-        
-        - Markdown: publish the Markdown text on a website that can interpret it (**GitHub** for instance),
-        - HTML: publish the file converted to HTML via a Handlebars template (on a blog for example).
-        
-        ## Update a publication
-        
-        After publishing, StackEdit keeps your file linked to that publication which makes it easy for you to re-publish it. Once you have modified your file and you want to update your publication, click on the **Publish now** button in the navigation bar.
-        
-        > **Note:** The **Publish now** button is disabled if your file has not been published yet.
-        
-        ## Manage file publication
-        
-        Since one file can be published to multiple locations, you can list and manage publish locations by clicking **File publication** in the **Publish** sub-menu. This allows you to list and remove publication locations that are linked to your file.
-        
-        
-        # Markdown extensions
-        
-        StackEdit extends the standard Markdown syntax by adding extra **Markdown extensions**, providing you with some nice features.
-        
-        > **ProTip:** You can disable any **Markdown extension** in the **File properties** dialog.
-        
-        
-        ## SmartyPants
-        
-        SmartyPants converts ASCII punctuation characters into "smart" typographic punctuation HTML entities. For example:
-        
-        |                |ASCII                          |HTML                         |
-        |----------------|-------------------------------|-----------------------------|
-        |Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
-        |Quotes          |`"Isn't this fun?"`            |"Isn't this fun?"            |
-        |Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
-        EOM;
+最近使い始めたMarkdownについてまとめます。
+
+
+-------------------------------
+  Markdown（マークダウン）とは
+-------------------------------
+
+> Markdown は、文書を記述するための軽量マークアップ言語のひとつである。  
+> 「書きやすくて読みやすいプレーンテキストとして記述した文書を、
+> 妥当なXHTML（もしくはHTML）文書へと変換できるフォーマット」として、
+> ジョン・グル―バー（John Gruber）により作成された。  
+> 出典：[Wikipedia（Markdown）](http://ja.wikipedia.org/wiki/Markdown)
+
+要は、プレーンテキストを勝手にHTML化して、それっぽく見せてくれるモノです。
+
+議事録やアイデアメモを普通のテキストエディタで作ってもよいのですが、  
+それだと文字の強調や、資料画像の埋め込み、リンク追加などができません。
+
+それを解決してくれるのがMarkdownです。
+
+
+-------------------------------
+   Markdownを使う理由
+-------------------------------
+
+Lifehackerの「 [読みやすいマークダウン記法を始めてみませんか？](http://www.lifehacker.jp/2013/02/130213markdown.html) 」を読み、  
+初めてMarkdown記法を知りました。
+
+第一印象は、**「簡単なのにそれっぽく見えるカッコイイ！！」**です。  
+
+テキストエディタの表現限界を感じもっと見やすい資料が作りたい、  
+でも忙しいから手間がかからないやつが良いという私にピッタリのモノでした。
+
+いちいちHTMLを書くのも面倒だし、  
+Office Word？そんなもん使ってたら貴重な時間が潰されてしまいます。
+
+
+-------------------------------
+  基本的な文法
+-------------------------------
+
+Markdownの文法は非常に簡単なものです。  
+私の場合、使い始めて1週間しないうちにだいたいの文法を覚えることができました。  
+基本的な文法だけ紹介します。
+
+-------------------------------
+  見出し
+-------------------------------
+# 見出し１（h1）
+## 見出し２（h2）
+### 見出し３（h3）
+#### 見出し４（h4）
+##### 見出し５（h5）
+###### 見出し６（h6）
+
+-------------------------------
+  強調
+-------------------------------
+*イタリック*  
+_イタリック_  
+**ボールド**  
+__ボールド__  
+**_イタリック＆ボールド_**  
+
+-------------------------------
+  改行
+-------------------------------
+空白行で囲まれた１行、または複数行の文章はひとつの段落になる
+
+改行を入れないと複数の
+段落にならない  
+複数行で改行を入れたい場合は、  
+末尾に半角スペース２つを入れる
+
+-------------------------------
+  リスト
+-------------------------------
+* リスト１
+- リスト２
+  リストの末尾に半角2つで改行
++ リスト３
+ + 入れ子
+1. 番号付き
+1. 番号付き
+5. 数字は無視されリストの順序が優先される  
+
+-------------------------------
+  リンク
+-------------------------------
+[リンクになる](http://kuroeveryday.blogspot.jp/)  
+これでもOK <http://kuroeveryday.blogspot.jp/>
+
+-------------------------------
+  引用
+-------------------------------
+> これで引用になる
+> 引用内でも改行は  
+> 可能！
+
+
+-------------------------------
+より詳しい文法は、  以下のサイトを参照してください。
+
++ [Wikipedia（Markdown）](http://ja.wikipedia.org/wiki/Markdown)
++ [Markdown文法の全訳](http://blog.2310.net/archives/6)
+
+
+
+
+
+以上
+EOM;
 
         return $t;
     }
