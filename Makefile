@@ -29,7 +29,7 @@ init:
 sqlite:
 	$(bash-c) 'sqlite3 database/database.sqlite'
 
-deploy:
+deploy-init:
 	docker-compose -f docker-compose-deploy.yml build --no-cache
 	docker-compose -f docker-compose-deploy.yml up -d
 	$(deploy-c) 'composer install'
@@ -43,7 +43,7 @@ deploy-down:
 deploy-phpunit:
 	$(deploy-c) 'vendor/bin/phpunit'
 
-nginxproxy:
+nginxproxy-init:
 	docker-compose -f docker-compose-nginxproxy.yml build --no-cache
 	docker-compose -f docker-compose-nginxproxy.yml up -d
 	$(nginxproxy-c) 'composer install'
