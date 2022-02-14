@@ -33,7 +33,7 @@ class HogeController extends Controller
     | aligned          |           aligned |      aligned       |
     EOM;
 
-    // 変換
-    dd(Markdown::parse($text));
+    $markdown = Markdown::parse(e($text));
+    return view('demo', compact('markdown'));
   }
 }

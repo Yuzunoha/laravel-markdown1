@@ -17,6 +17,7 @@ EEE;
 
 <body>
   <div>
+    {{ $markdown }}
   </div>
 </body>
 
