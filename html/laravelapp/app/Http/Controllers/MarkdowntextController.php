@@ -129,6 +129,18 @@ __ボールド__
 これでもOK <http://kuroeveryday.blogspot.jp/>
 
 -------------------------------
+  テーブル
+-------------------------------
+| Left align       |       Right align |    Center align    |
+|:-----------------|------------------:|:------------------:|
+| This             |              This |        This        |
+| column           |            column |       column       |
+| will             |              will |        will        |
+| be               |                be |         be         |
+| left             |             right |       center       |
+| aligned          |           aligned |      aligned       |
+
+-------------------------------
   引用
 -------------------------------
 > 引用とチェックボックスはLaravelでは表現できないらしい
