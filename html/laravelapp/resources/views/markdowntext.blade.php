@@ -13,11 +13,6 @@
     {{ Form::submit('上書き', ['class' => 'btn btn-success btn-lg']) }}
     {{ Form::close() }}
   </div>
-  <pre>
-    <code class="prettyprint lang-js">
-    console.log('Hello World')
-    </code>
-  </pre>
   <script src="{{ asset('js/run_prettify_preprocessing.js') }}"></script>
   <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
   <link rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/github-v2.min.css">

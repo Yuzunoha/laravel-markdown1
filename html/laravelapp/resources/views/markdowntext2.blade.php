@@ -5,19 +5,9 @@
 </head>
 
 <body>
-  <h1>v2</h1>
   <div>
-    <pre class="prettyprint lang-js linenums">
-console.log('Hello World', 123);
-    </pre>
-    <pre class="prettyprint lang-php">
-console.log('Hello World', 123);
-    </pre>
-    <pre class="prettyprint language-js">
-console.log('Hello World', 123);
-    </pre>
     {{ $markdowntext }}
-    {{ Form::open(['action' => 'MarkdowntextController@store', 'method' => 'post']) }}
+    {{ Form::open(['action' => 'MarkdowntextController@store2', 'method' => 'post']) }}
     {{ Form::token() }}
     {{ Form::textarea('textarea1', $rawtext, ['class' => 'form-control',  'rows' => '80', 'cols' => '120']) }}
     {{ Form::submit('上書き', ['class' => 'btn btn-success btn-lg']) }}
