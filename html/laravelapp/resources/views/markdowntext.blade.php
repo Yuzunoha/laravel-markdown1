@@ -19,13 +19,12 @@
     </code>
   </pre>
   <script>
-    // var elm = doc.querySelectorAll("[id^='a']"); // IDがaから始まっているものを選択 ex) #abc #ant 
-    let elements = document.querySelectorAll("[class^='lang']");
+    const elements = document.querySelectorAll("[class^='lang']"); // langから始まるクラス
     for (const element of elements) {
       element.classList.add('prettyprint');
+      // element.style.fontSize = '16px';
+      element.style.fontWeight = "bold";
     }
-    console.log(elements);
-    console.log(elements[0]);
   </script>
   <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </body>
