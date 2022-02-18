@@ -18,15 +18,9 @@
     console.log('Hello World')
     </code>
   </pre>
-  <script>
-    const elements = document.querySelectorAll("[class^='lang']"); // langから始まるクラス
-    for (const element of elements) {
-      element.classList.add('prettyprint');
-      // element.style.fontSize = '16px';
-      element.style.fontWeight = "bold";
-    }
-  </script>
+  <script src="{{ asset('js/run_prettify_preprocessing.js') }}"></script>
   <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  <link rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/github-v2.min.css">
 </body>
 
 </html>
