@@ -12,6 +12,21 @@
     {{ Form::close() }}
     {{ $markdowntext }}
   </div>
+  <pre>
+    <code class="prettyprint lang-js">
+    console.log('Hello World')
+    </code>
+  </pre>
+  <script>
+    // var elm = doc.querySelectorAll("[id^='a']"); // IDがaから始まっているものを選択 ex) #abc #ant 
+    let elements = document.querySelectorAll("[class^='lang']");
+    for (const element of elements) {
+      element.classList.add('prettyprint');
+    }
+    console.log(elements);
+    console.log(elements[0]);
+  </script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </body>
 
 </html>
