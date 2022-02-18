@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'MarkdowntextController@index');
+Route::get('/v2', 'MarkdowntextController@index2');
 Route::post('/', 'MarkdowntextController@store');
 Route::get('/test', function () {
   echo '<pre>';

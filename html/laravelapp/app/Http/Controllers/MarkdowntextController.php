@@ -20,6 +20,18 @@ class MarkdowntextController extends Controller
     return view('markdowntext', compact('markdowntext', 'rawtext'));
   }
 
+  public function index2()
+  {
+    $m = Markdowntext::find(1);
+    if ($m) {
+      $rawtext = $m->text;
+    } else {
+      $rawtext = $this->example();
+    }
+    $markdowntext = Markdown::parse($rawtext);
+    return view('markdowntext2', compact('markdowntext', 'rawtext'));
+  }
+
   public function store(Request $request)
   {
     $m = Markdowntext::find(1);
