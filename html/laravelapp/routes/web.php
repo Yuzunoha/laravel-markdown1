@@ -15,3 +15,7 @@ Route::get('/test', function () {
 Route::get('/testpage', function () {
   return view('testpage');
 });
+
+Route::get('/github-v2', 'MarkdowntextController@path');
+Route::get('/tomorrow-night', 'MarkdowntextController@path');
+Route::get('/tranquil-heart', 'MarkdowntextController@path');

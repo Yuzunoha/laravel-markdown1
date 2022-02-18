@@ -32,6 +32,13 @@ class MarkdowntextController extends Controller
     return view('markdowntext2', compact('markdowntext', 'rawtext'));
   }
 
+  public function path(Request $request)
+  {
+    $type = $request->path();
+    list($markdowntext, $rawtext) = $this->index_core();
+    return view($type, compact('markdowntext', 'rawtext'));
+  }
+
   protected function store_core(Request $request)
   {
     $m = Markdowntext::find(1);
