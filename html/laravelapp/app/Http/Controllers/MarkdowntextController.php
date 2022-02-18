@@ -8,7 +8,7 @@ use Illuminate\Mail\Markdown;
 
 class MarkdowntextController extends Controller
 {
-  public function index()
+  protected function index_core()
   {
     $m = Markdowntext::find(1);
     if ($m) {
@@ -17,22 +17,22 @@ class MarkdowntextController extends Controller
       $rawtext = $this->example();
     }
     $markdowntext = Markdown::parse($rawtext);
+    return [$markdowntext, $rawtext];
+  }
+
+  public function index()
+  {
+    list($markdowntext, $rawtext) = $this->index_core();
     return view('markdowntext', compact('markdowntext', 'rawtext'));
   }
 
   public function index2()
   {
-    $m = Markdowntext::find(1);
-    if ($m) {
-      $rawtext = $m->text;
-    } else {
-      $rawtext = $this->example();
-    }
-    $markdowntext = Markdown::parse($rawtext);
+    list($markdowntext, $rawtext) = $this->index_core();
     return view('markdowntext2', compact('markdowntext', 'rawtext'));
   }
 
-  public function store(Request $request)
+  protected function store_core(Request $request)
   {
     $m = Markdowntext::find(1);
     if (!$m) {
@@ -40,7 +40,18 @@ class MarkdowntextController extends Controller
     }
     $m->text = $request->textarea1;
     $m->save();
+  }
+
+  public function store(Request $request)
+  {
+    $this->store_core($request);
     return redirect()->action('MarkdowntextController@index');
+  }
+
+  public function store2(Request $request)
+  {
+    $this->store_core($request);
+    return redirect()->action('MarkdowntextController@index2');
   }
 
   public function example()
