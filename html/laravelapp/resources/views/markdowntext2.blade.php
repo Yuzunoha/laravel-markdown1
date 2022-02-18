@@ -7,6 +7,15 @@
 <body>
   <h1>v2</h1>
   <div>
+    <pre class="prettyprint lang-js linenums">
+console.log('Hello World', 123);
+    </pre>
+    <pre class="prettyprint lang-php">
+console.log('Hello World', 123);
+    </pre>
+    <pre class="prettyprint language-js">
+console.log('Hello World', 123);
+    </pre>
     {{ $markdowntext }}
     {{ Form::open(['action' => 'MarkdowntextController@store', 'method' => 'post']) }}
     {{ Form::token() }}
@@ -14,20 +23,14 @@
     {{ Form::submit('上書き', ['class' => 'btn btn-success btn-lg']) }}
     {{ Form::close() }}
   </div>
-  <pre>
-    <code class="prettyprint lang-js">
-    console.log('Hello World')
-    </code>
-  </pre>
   <script>
     const elements = document.querySelectorAll("[class^='lang']"); // langから始まるクラス
     for (const element of elements) {
       element.classList.add('prettyprint');
-      // element.style.fontSize = '16px';
-      element.style.fontWeight = "bold";
     }
   </script>
   <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  <link rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/github-v2.min.css">
 </body>
 
 </html>
