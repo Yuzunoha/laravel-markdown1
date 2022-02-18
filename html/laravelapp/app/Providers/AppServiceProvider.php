@@ -38,6 +38,8 @@ class AppServiceProvider extends ServiceProvider
         });
 
         // ssl化(https強制)
-        $url->forceScheme('https');
+        if ('localhost' !== $_SERVER['HTTP_HOST']) {
+            $url->forceScheme('https');
+        }
     }
 }
