@@ -10,3 +10,6 @@ Route::get('/test', function () {
   $msg = 'localhost' !== $_SERVER['HTTP_HOST'] ? '真' : '偽';
   echo '(localhost !== $_SERVER[HTTP_HOST]): ' . $msg . '<br>';
 });
+Route::get('/testpage', function () {
+  return view('testpage');
+});
