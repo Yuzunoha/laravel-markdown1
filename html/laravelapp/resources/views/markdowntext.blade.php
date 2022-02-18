@@ -7,6 +7,7 @@
 <body>
   <div>
     {{ Form::open(['action' => 'MarkdowntextController@store', 'method' => 'post']) }}
+    {{ Form::token() }}
     {{ Form::textarea('textarea1', $rawtext, ['class' => 'form-control',  'rows' => '80', 'cols' => '120']) }}
     {{ Form::submit('上書き', ['class' => 'btn btn-success btn-lg']) }}
     {{ Form::close() }}
