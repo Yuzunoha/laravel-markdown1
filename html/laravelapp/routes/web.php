@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'MarkdowntextController@index');
 Route::get('/v2', 'MarkdowntextController@index2');
 Route::post('/', 'MarkdowntextController@store');
-Route::post('/', 'MarkdowntextController@store2');
+Route::post('/v2', 'MarkdowntextController@store2');
 Route::get('/test', function () {
   echo '<pre>';
   echo $_SERVER['HTTP_HOST'] . '<br>';
