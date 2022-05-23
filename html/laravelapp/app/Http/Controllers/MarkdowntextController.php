@@ -61,6 +61,12 @@ class MarkdowntextController extends Controller
         return redirect()->action('MarkdowntextController@index2');
     }
 
+    public function mermaid()
+    {
+        list($markdowntext, $rawtext) = $this->index_core();
+        return view('mermaid', compact('markdowntext', 'rawtext'));
+    }
+
     public function example()
     {
         $t = <<< EOM
