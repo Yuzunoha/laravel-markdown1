@@ -8,62 +8,62 @@ use Illuminate\Mail\Markdown;
 
 class MarkdowntextController extends Controller
 {
-  protected function index_core()
-  {
-    $m = Markdowntext::find(1);
-    if ($m) {
-      $rawtext = $m->text;
-    } else {
-      $rawtext = $this->example();
+    protected function index_core()
+    {
+        $m = Markdowntext::find(1);
+        if ($m) {
+            $rawtext = $m->text;
+        } else {
+            $rawtext = $this->example();
+        }
+        $markdowntext = Markdown::parse($rawtext);
+        return [$markdowntext, $rawtext];
     }
-    $markdowntext = Markdown::parse($rawtext);
-    return [$markdowntext, $rawtext];
-  }
 
-  public function index()
-  {
-    list($markdowntext, $rawtext) = $this->index_core();
-    return view('markdowntext', compact('markdowntext', 'rawtext'));
-  }
-
-  public function index2()
-  {
-    list($markdowntext, $rawtext) = $this->index_core();
-    return view('markdowntext2', compact('markdowntext', 'rawtext'));
-  }
-
-  public function path(Request $request)
-  {
-    $type = $request->path();
-    list($markdowntext, $rawtext) = $this->index_core();
-    return view($type, compact('markdowntext', 'rawtext'));
-  }
-
-  protected function store_core(Request $request)
-  {
-    $m = Markdowntext::find(1);
-    if (!$m) {
-      $m = new Markdowntext();
+    public function index()
+    {
+        list($markdowntext, $rawtext) = $this->index_core();
+        return view('markdowntext', compact('markdowntext', 'rawtext'));
     }
-    $m->text = $request->textarea1;
-    $m->save();
-  }
 
-  public function store(Request $request)
-  {
-    $this->store_core($request);
-    return redirect()->action('MarkdowntextController@index');
-  }
+    public function index2()
+    {
+        list($markdowntext, $rawtext) = $this->index_core();
+        return view('markdowntext2', compact('markdowntext', 'rawtext'));
+    }
 
-  public function store2(Request $request)
-  {
-    $this->store_core($request);
-    return redirect()->action('MarkdowntextController@index2');
-  }
+    public function path(Request $request)
+    {
+        $type = $request->path();
+        list($markdowntext, $rawtext) = $this->index_core();
+        return view($type, compact('markdowntext', 'rawtext'));
+    }
 
-  public function example()
-  {
-    $t = <<< EOM
+    protected function store_core(Request $request)
+    {
+        $m = Markdowntext::find(1);
+        if (!$m) {
+            $m = new Markdowntext();
+        }
+        $m->text = $request->textarea1;
+        $m->save();
+    }
+
+    public function store(Request $request)
+    {
+        $this->store_core($request);
+        return redirect()->action('MarkdowntextController@index');
+    }
+
+    public function store2(Request $request)
+    {
+        $this->store_core($request);
+        return redirect()->action('MarkdowntextController@index2');
+    }
+
+    public function example()
+    {
+        $t = <<< EOM
 Markdownを使う理由
 =================================
 
@@ -189,6 +189,6 @@ __ボールド__
 以上
 EOM;
 
-    return $t;
-  }
+        return $t;
+    }
 }
